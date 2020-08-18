@@ -1,17 +1,16 @@
-#include <iostream>
-
-#include <array>
-#include <vector>
+#include "Array.h"
 
 int main()
-{
-    std::cout<<"Hello World \n";
 
-    std::array<std::string, 2> a3 = { std::string("a"), "b" };
-    
-    for(const auto& s: a3)
-        std::cout << s << ' ';
+{   int size = 5;
+    Array<int,5> data;
 
-    return 0;
+    //std::cout<<data.size();
 
+    memset(&data[0], 0, data.size()*sizeof(int));
+
+    data[1] = 5;
+
+    for (size_t i=0 ; i<data.size(); i++)
+    { std::cout<<data[i]<<std::endl; }
 }
